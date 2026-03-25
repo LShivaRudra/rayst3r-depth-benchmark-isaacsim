@@ -17,7 +17,8 @@ TARGET_CLASS = "003_cracker_box"               # Class label for segmentation ta
 AUTO_ASSIGN_SEMANTIC_LABEL = True
 
 RESOLUTION = (1280, 720)
-OUT_DIR = "/home/shiva/Documents/isaac_sim_rendering"
+HOME_DIR = os.environ.get("HOME", os.path.expanduser("~"))
+OUT_DIR = os.path.join(HOME_DIR, "Documents", "isaac_sim_rendering")
 DEPTH_MAX_METERS = 10.0
 
 

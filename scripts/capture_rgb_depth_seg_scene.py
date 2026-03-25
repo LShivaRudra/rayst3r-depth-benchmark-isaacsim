@@ -11,9 +11,10 @@ import omni.replicator.core as rep
 from pxr import UsdGeom, UsdLux, Usd, Gf
 
 # ---------- Config ----------
-ROOT = "/home/shiva/Downloads/datasets/ycb"
-OUT_DIR = "/home/shiva/Documents/isaac_sim_rendering"
-SCENE_STAGE_PATH = "/home/shiva/isaacsim/ycb_multi_scene.usd"
+HOME_DIR = os.environ.get("HOME", os.path.expanduser("~"))
+ROOT = os.path.join(HOME_DIR, "Downloads", "datasets", "ycb")
+OUT_DIR = os.path.join(HOME_DIR, "Documents", "isaac_sim_rendering")
+SCENE_STAGE_PATH = os.path.join(HOME_DIR, "isaacsim", "ycb_multi_scene.usd")
 
 RESOLUTION = (1280, 720)
 DEPTH_MAX_METERS = 10.0

@@ -1,7 +1,8 @@
 import os
 import numpy as np
 
-RAYST3R_DIR = "/home/shiva/Documents/rayst3r/outputs/rayst3r_preds"
+HOME_DIR = os.environ.get("HOME", os.path.expanduser("~"))
+RAYST3R_DIR = os.path.join(HOME_DIR, "Documents", "rayst3r", "outputs", "rayst3r_preds")
 PRED_DEPTH_PATH = os.path.join(RAYST3R_DIR, "depths.npy")
 CONF_PATH = os.path.join(RAYST3R_DIR, "confidence.npy")
 PRED_MASK_PATH = os.path.join(RAYST3R_DIR, "masks.npy")

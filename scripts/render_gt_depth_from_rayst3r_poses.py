@@ -9,8 +9,9 @@ import omni.replicator.core as rep
 from pxr import UsdGeom, UsdLux, Gf
 
 # ---------- Scene config (matches capture_rgb_depth_seg_scene.py) ----------
-ROOT = "/home/shiva/Downloads/datasets/ycb"
-SCENE_STAGE_PATH = "/home/shiva/isaacsim/ycb_multi_scene.usd"
+HOME_DIR = os.environ.get("HOME", os.path.expanduser("~"))
+ROOT = os.path.join(HOME_DIR, "Downloads", "datasets", "ycb")
+SCENE_STAGE_PATH = os.path.join(HOME_DIR, "isaacsim", "ycb_multi_scene.usd")
 CAMERA_PATH = "/World/CameraMain"
 DEPTH_MAX_METERS = 10.0
 
@@ -66,7 +67,7 @@ ASSETS = [
 ]
 
 # ---------- RaySt3R input/output ----------
-RAYST3R_DIR = "/home/shiva/Documents/rayst3r/outputs/rayst3r_preds"
+RAYST3R_DIR = os.path.join(HOME_DIR, "Documents", "rayst3r", "outputs", "rayst3r_preds")
 POSES_PATH = os.path.join(RAYST3R_DIR, "extrinsics_c2w.npy")
 INTRINSICS_PATH = os.path.join(RAYST3R_DIR, "intrinsics.npy")
 GT_OUT_DIR = os.path.join(RAYST3R_DIR, "isaac_sim_gt")

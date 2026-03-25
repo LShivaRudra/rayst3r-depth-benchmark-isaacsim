@@ -10,11 +10,12 @@ import omni.replicator.core as rep
 from pxr import UsdGeom, UsdLux, Gf
 
 
-ROOT = "/home/shiva/Downloads/datasets/ycb"
-SCENE_STAGE_PATH = "/home/shiva/isaacsim/ycb_multi_scene.usd"
+HOME_DIR = os.environ.get("HOME", os.path.expanduser("~"))
+ROOT = os.path.join(HOME_DIR, "Downloads", "datasets", "ycb")
+SCENE_STAGE_PATH = os.path.join(HOME_DIR, "isaacsim", "ycb_multi_scene.usd")
 CAMERA_PATH = "/World/CameraMain"
 
-RAYST3R_DIR = "/home/shiva/Documents/rayst3r/outputs/rayst3r_preds"
+RAYST3R_DIR = os.path.join(HOME_DIR, "Documents", "rayst3r", "outputs", "rayst3r_preds")
 POSES_PATH = os.path.join(RAYST3R_DIR, "extrinsics_c2w.npy")
 INTRINSICS_PATH = os.path.join(RAYST3R_DIR, "intrinsics.npy")
 OUT_DIR = os.path.join(RAYST3R_DIR, "rgb_pose_debug")

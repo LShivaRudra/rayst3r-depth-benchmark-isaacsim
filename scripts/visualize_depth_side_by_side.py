@@ -2,7 +2,8 @@ import os
 import numpy as np
 from PIL import Image, ImageDraw
 
-RAYST3R_DIR = "/home/shiva/Documents/rayst3r/outputs/rayst3r_preds"
+HOME_DIR = os.environ.get("HOME", os.path.expanduser("~"))
+RAYST3R_DIR = os.path.join(HOME_DIR, "Documents", "rayst3r", "outputs", "rayst3r_preds")
 PRED_DEPTH_PATH = os.path.join(RAYST3R_DIR, "depths.npy")
 GT_DEPTH_PATH = os.path.join(RAYST3R_DIR, "isaac_sim_gt", "depths.npy")
 OUT_DIR = os.path.join(RAYST3R_DIR, "depth_side_by_side")
